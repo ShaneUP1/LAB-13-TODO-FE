@@ -12,9 +12,18 @@ label {
   margin: 3px;
 }
 
+.todo-list {
+  width: 100%;
+}
+
 .auth-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.user-login-info {
+  display: flex;
+  flex-direction: column;
 }
