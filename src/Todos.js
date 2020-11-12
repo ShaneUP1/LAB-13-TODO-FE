@@ -48,8 +48,8 @@ export default class Todos extends Component {
             <>
                 <section className="todo-list">
                     <div>
-                        Your TODO List:
-                <form onSubmit={this.handleSubmit}>
+                        <h1>Your TODO List</h1>
+                        <form onSubmit={this.handleSubmit}>
                             <label>
                                 Add a new todo:
                         <input
@@ -67,9 +67,9 @@ export default class Todos extends Component {
                                 : this.state.todos.map(todo => <div key={`${todo.todo}${todo.completed}${Math.random()}`} style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}>
                                     todo: {todo.todo}
                                     {
-                                        todo.completed ? '' : <button
+                                        todo.completed ? '' : <button className='done-button'
                                             onClick={() => this.handleCompletedClick(todo.id)}>
-                                            Mark as completed
+                                            Done!
                             </button>
                                     }
                                 </div>)

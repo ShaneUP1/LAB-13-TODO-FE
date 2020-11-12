@@ -6,13 +6,33 @@ body {
 button {
   width: 100px;
   margin-top: 10px;
+  border-radius: 5px;
 }
 
 label {
   margin: 3px;
 }
 
+ul {
+  
+}
+
+.done-button {
+  margin-left: 5px;
+}
+
+.homepage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .todo-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   width: 100%;
 }
 
@@ -26,4 +46,6 @@ label {
 .user-login-info {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  line-height: 1.5em;
 }
