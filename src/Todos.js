@@ -15,10 +15,10 @@ export default class Todos extends Component {
 
     fetchTodos = async () => {
         await this.setState({ loading: true });
-        const response = await request.get('https://rocky-plains-30100.herokuapp.com/api/todos')
+        const { body } = await request.get('https://rocky-plains-30100.herokuapp.com/api/todos')
             .set('Authorization', this.props.token)
 
-        await this.setState({ todos: response.body, loading: false })
+        await this.setState({ todos: body, loading: false })
     }
 
     handleSubmit = async (e) => {
@@ -44,6 +44,7 @@ export default class Todos extends Component {
 
 
     render() {
+        const { todo, todos, loading } = this.state
         return (
             <>
                 <section className="todo-list">
@@ -53,7 +54,7 @@ export default class Todos extends Component {
                             <label>
                                 Add a new todo:
                         <input
-                                    value={this.state.todo}
+                                    value={todo}
                                     onChange={(e) => this.setState({ todo: e.target.value })}
                                 />
                             </label>
@@ -62,9 +63,9 @@ export default class Todos extends Component {
                         </button>
                         </form>
                         {
-                            this.state.loading
+                            loading
                                 ? 'LOOAAADDDDIIIIINNNNNGGGGGGGG'
-                                : this.state.todos.map(todo => <div key={`${todo.todo}${todo.completed}${Math.random()}`} style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}>
+                                : todos.map(todo => <div key={`${todo.todo}${todo.completed}${Math.random()}`} style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}>
                                     todo: {todo.todo}
                                     {
                                         todo.completed ? '' : <button className='done-button'

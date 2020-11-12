@@ -33,6 +33,8 @@ export default class SignUp extends Component {
 
 
     render() {
+        const { password, email, loading } = this.state
+
         return (
 
             <div>
@@ -44,16 +46,16 @@ export default class SignUp extends Component {
                             Username:
                             <input
                                 onChange={(e) => this.setState({ email: e.target.value })}
-                                value={this.state.email} />
+                                value={email} />
                         </label>
                         <label>
                             Password:
                             <input
                                 onChange={(e) => this.setState({ password: e.target.value })}
-                                value={this.state.password} type='password' />
+                                value={password} type='password' />
                         </label>
                         {
-                            this.state.loading
+                            loading
                                 ? 'Loaadddiinnnnggggggg'
                                 : <button>
                                     Sign-up!
