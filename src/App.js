@@ -49,6 +49,8 @@ export default class App extends Component {
             {
               this.state.token
                 ? <div className='user-login-info'>
+                  <Link to="/"><div>Home</div></Link>
+                  <Link to="/todos"><div>Todo List</div></Link>
                   {this.state.username}
                   <button onClick={this.logOut}>Log out</button>
                 </div>
