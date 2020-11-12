@@ -48,7 +48,7 @@ export default class App extends Component {
           <ul>
             {
               this.state.token
-                ? <div>
+                ? <div className='user-login-info'>
                   {this.state.username}
                   <button onClick={this.logOut}>Log out</button>
                 </div>
@@ -77,8 +77,9 @@ export default class App extends Component {
               token={this.state.token}
               exact
               path='/todos'
-              token={this.state.token}
+
               render={(routerProps) => <Todos
+                token={this.state.token}
                 {...routerProps} />} />
           </Switch>
         </Router>
